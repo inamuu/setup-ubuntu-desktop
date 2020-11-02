@@ -37,5 +37,13 @@ Host github.com
   IdentityFile ~/.ssh/id_rsa_ubuntu
 ```
 
+Setup git config to download and git push
+
+```sh
+git config --global user.email "Check your Email at GitHub Profile to protection open email"
+git config --global user.name "inamuu"
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+```
+
 Run git clone git@github.com:inamuu/dotfiles.git
 
