@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 #git clone git@github.com/inamuu/dotfiles.git ~/dotfiles
 
 sudo apt update
 sudo apt install -y \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  software-properties-common
   bzip2 \
   libbz2-dev \
   libreadline-dev \
@@ -34,4 +38,13 @@ fi
 #anyenv install phpenv
 
 go get github.com/motemen/ghq
+
+# Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt install -y docker-ce
 
