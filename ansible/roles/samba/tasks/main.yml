@@ -3,3 +3,17 @@
   apt:
     name: samba
     state: present
+
+- name: set smb.conf
+  copy:
+    src: "roles/samba/files/smb.conf"
+    dest: "/etc/samba/smb.conf"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: start samba
+  service:
+    name: smbd
+    enabled: true
+    state: started
